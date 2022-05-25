@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="me.berfini.household.data.CharacterViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/title_top_margin"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/distressed"
+                    android:text="A"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/capital_size"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/distressed" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sydonia"
+                    android:text="CES UP THE SLEEVE"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size"
+                    app:fontFamily="@font/sydonia" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/aces"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    aces="@{viewModel.aces}"
+                    android:src="@drawable/aces_hdcsj" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignTop="@id/aces"
+                    android:layout_alignBottom="@id/aces"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:onClick="@{() -> viewModel.toggleAce(0)}"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <View
+                        android:onClick="@{() -> viewModel.toggleAce(1)}"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <View
+                        android:onClick="@{() -> viewModel.toggleAce(2)}"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <View
+                        android:onClick="@{() -> viewModel.toggleAce(3)}"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <View
+                        android:onClick="@{() -> viewModel.toggleAce(4)}"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/title_top_margin"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/distressed"
+                    android:text="W"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/capital_size"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/distressed" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sydonia"
+                    android:text="EALTH"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size"
+                    app:fontFamily="@font/sydonia" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/subtitle_top_margin"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sydonia"
+                        android:layout_marginTop="@dimen/subtitle_top_margin"
+                        android:text="POOR"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/sydonia" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:onClick="@{() -> viewModel.toggle(viewModel.wealth, 1)}"
+                            wealth="@{viewModel.wealth >= 1}"
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:src="@drawable/coin2_full" />
+
+                        <ImageView
+                            android:onClick="@{() -> viewModel.toggle(viewModel.wealth, 2)}"
+                            wealth="@{viewModel.wealth >= 2}"
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/coin2_full" />
+
+                        <ImageView
+                            android:onClick="@{() -> viewModel.toggle(viewModel.wealth, 3)}"
+                            wealth="@{viewModel.wealth >= 3}"
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/coin2_full" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:src="@drawable/coin" />
+
+                        <ImageView
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/coin" />
+
+                        <ImageView
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/coin" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sydonia"
+                        android:layout_marginTop="@dimen/subtitle_top_margin"
+                        android:text="WELL-OFF"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/sydonia" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:onClick="@{() -> viewModel.toggle(viewModel.wealth, 4)}"
+                            wealth="@{viewModel.wealth >= 4}"
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:src="@drawable/coin2_empty" />
+
+                        <ImageView
+                            android:onClick="@{() -> viewModel.toggle(viewModel.wealth, 5)}"
+                            wealth="@{viewModel.wealth >= 5}"
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/coin2_empty" />
+
+                        <ImageView
+                            android:onClick="@{() -> viewModel.toggle(viewModel.wealth, 6)}"
+                            wealth="@{viewModel.wealth >= 6}"
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/coin2_empty" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:src="@drawable/coin" />
+
+                        <ImageView
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/coin" />
+
+                        <ImageView
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/coin" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sydonia"
+                        android:layout_marginTop="@dimen/subtitle_top_margin"
+                        android:text="RICH"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/sydonia" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:onClick="@{() -> viewModel.toggle(viewModel.wealth, 7)}"
+                            wealth="@{viewModel.wealth >= 7}"
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:src="@drawable/coin2_empty" />
+
+                        <ImageView
+                            android:onClick="@{() -> viewModel.toggle(viewModel.wealth, 8)}"
+                            wealth="@{viewModel.wealth >= 8}"
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/coin2_empty" />
+
+                        <ImageView
+                            android:onClick="@{() -> viewModel.toggle(viewModel.wealth, 9)}"
+                            wealth="@{viewModel.wealth >= 9}"
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/coin2_empty" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:src="@drawable/coin" />
+
+                        <ImageView
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/coin" />
+
+                        <ImageView
+                            android:layout_width="@dimen/ace_small_size"
+                            android:layout_height="@dimen/ace_small_size"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/coin" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/title_top_margin"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/distressed"
+                    android:text="E"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/capital_size"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/distressed" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sydonia"
+                    android:text="QUIPEMENT"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size"
+                    app:fontFamily="@font/sydonia" />
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/subtitle_top_margin"
+                app:boxBackgroundColor="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.equipement}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/title_top_margin"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/distressed"
+                    android:text="T"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/capital_size"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/distressed" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sydonia"
+                    android:text="RAITS"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size"
+                    app:fontFamily="@font/sydonia" />
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/subtitle_top_margin"
+                app:boxBackgroundColor="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.traits}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/title_top_margin"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sydonia"
+                    android:text="M"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/capital_size"
+                    app:fontFamily="@font/sydonia" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sydonia"
+                    android:text="OVES"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size"
+                    app:fontFamily="@font/sydonia" />
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/subtitle_top_margin"
+                app:boxBackgroundColor="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.moves}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

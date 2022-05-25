@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/loadingFragment">
+
+    <fragment
+        android:id="@+id/acesFragment"
+        android:name="me.berfini.household.fragments.AcesFragment"
+        tools:layout="@layout/aces_fragment"
+        android:label="AcesFragment" />
+
+    <action
+        android:id="@+id/action_global_acesFragment"
+        app:destination="@id/acesFragment"
+        app:launchSingleTop="true" />
+
+    <fragment
+        android:id="@+id/characterFragment"
+        android:name="me.berfini.household.fragments.CharacterFragment"
+        tools:layout="@layout/character_fragment"
+        android:label="CharacterFragment" />
+
+    <action
+        android:id="@+id/action_global_characterFragment"
+        app:destination="@id/characterFragment"
+        app:launchSingleTop="true" />
+
+    <fragment
+        android:id="@+id/conditionFragment"
+        android:name="me.berfini.household.fragments.ConditionFragment"
+        tools:layout="@layout/condition_fragment"
+        android:label="ConditionFragment" />
+
+    <action
+        android:id="@+id/action_global_conditionFragment"
+        app:destination="@id/conditionFragment"
+        app:launchSingleTop="true" />
+
+    <fragment
+        android:id="@+id/stuffFragment"
+        android:name="me.berfini.household.fragments.StuffFragment"
+        tools:layout="@layout/stuff_fragment"
+        android:label="StuffFragment" />
+
+    <action
+        android:id="@+id/action_global_stuffFragment"
+        app:destination="@id/stuffFragment"
+        app:launchSingleTop="true" />
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="me.berfini.household.fragments.HistoryFragment"
+        tools:layout="@layout/history_fragment"
+        android:label="HistoryFragment" />
+
+    <action
+        android:id="@+id/action_global_historyFragment"
+        app:destination="@id/historyFragment"
+        app:launchSingleTop="true" />
+
+    <fragment
+        android:id="@+id/loadingFragment"
+        android:name="me.berfini.household.fragments.LoadingFragment"
+        tools:layout="@layout/loading_fragment"
+        android:label="LoadingFragment" >
+
+        <action
+            android:id="@+id/action_loadingFragment_to_characterFragment"
+            app:destination="@id/characterFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/loadingFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+</navigation>

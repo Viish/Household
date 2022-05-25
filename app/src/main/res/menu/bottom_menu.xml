@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/characterFragment"
+        android:icon="@drawable/icon_color"
+        android:title="Character"/>
+    <item
+        android:id="@+id/acesFragment"
+        android:icon="@drawable/hearts"
+        android:title="Skills"/>
+    <item
+        android:id="@+id/stuffFragment"
+        android:icon="@drawable/diamonds"
+        android:title="Stuff"/>
+    <item
+        android:id="@+id/conditionFragment"
+        android:icon="@drawable/clubs"
+        android:title="Condition"/>
+    <item
+        android:id="@+id/historyFragment"
+        android:icon="@drawable/spades"
+        android:title="History"/>
+</menu>

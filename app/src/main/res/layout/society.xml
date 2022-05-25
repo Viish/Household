@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="data"
+            type="me.berfini.household.data.CharacterViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="@dimen/underline_top_margin"
+            android:layout_marginEnd="90dp"
+            android:scaleX="1"
+            android:src="@drawable/underline" />
+
+        <LinearLayout
+            android:id="@+id/society"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/distressed"
+                android:text="S"
+                android:textColor="@color/black"
+                android:textSize="@dimen/capital_size"
+                android:textStyle="bold"
+                app:fontFamily="@font/distressed" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sydonia"
+                android:text="OCIETY"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title_size"
+                app:fontFamily="@font/sydonia" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.society, 1)}"
+                hearts="@{data.society >= 1}"
+                android:layout_width="@dimen/ace_big_size"
+                android:layout_height="@dimen/ace_big_size"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/heart_full" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.society, 2)}"
+                hearts="@{data.society >= 2}"
+                android:layout_width="@dimen/ace_big_size"
+                android:layout_height="@dimen/ace_big_size"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/heart_empty" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/background_ace_width"
+            android:layout_height="@dimen/background_ace_height"
+            android:layout_below="@id/society"
+            android:alpha="0.1"
+            android:src="@drawable/hearts" />
+
+        <LinearLayout
+            android:id="@+id/art"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:gravity="center_vertical"
+            android:layout_below="@id/society"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/subtitle_size"
+                android:fontFamily="@font/sydonia"
+                app:fontFamily="@font/sydonia"
+                android:text="ART"/>
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.art, 1)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_full"
+                hearts="@{data.art >= 1}"/>
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.art, 2)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_empty"
+                hearts="@{data.art >= 2}" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.art, 3)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_empty"
+                hearts="@{data.art >= 3}" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.art, 4)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_empty"
+                hearts="@{data.art >= 4}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/charme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="@dimen/subtitle_top_margin"
+            android:gravity="center_vertical"
+            android:layout_below="@id/art"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/subtitle_size"
+                android:fontFamily="@font/sydonia"
+                app:fontFamily="@font/sydonia"
+                android:text="CHARME"/>
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.charme, 1)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_full"
+                hearts="@{data.charme >= 1}" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.charme, 2)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_empty"
+                hearts="@{data.charme >= 2}" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.charme, 3)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_empty"
+                hearts="@{data.charme >= 3}" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.charme, 4)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_empty"
+                hearts="@{data.charme >= 4}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/eloquence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="@dimen/subtitle_top_margin"
+            android:gravity="center_vertical"
+            android:layout_below="@id/charme"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/subtitle_size"
+                android:fontFamily="@font/sydonia"
+                app:fontFamily="@font/sydonia"
+                android:text="ELOQUENCE"/>
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.eloquence, 1)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_full"
+                hearts="@{data.eloquence >= 1}" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.eloquence, 2)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_empty"
+                hearts="@{data.eloquence >= 2}" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.eloquence, 3)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_empty"
+                hearts="@{data.eloquence >= 3}" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.eloquence, 4)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_empty"
+                hearts="@{data.eloquence >= 4}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/etiquette"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="@dimen/subtitle_top_margin"
+            android:gravity="center_vertical"
+            android:layout_below="@id/eloquence"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/subtitle_size"
+                android:fontFamily="@font/sydonia"
+                app:fontFamily="@font/sydonia"
+                android:text="ETIQUETTE"/>
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.etiquette, 1)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_full"
+                hearts="@{data.etiquette >= 1}" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.etiquette, 2)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_empty"
+                hearts="@{data.etiquette >= 2}" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.etiquette, 3)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_empty"
+                hearts="@{data.etiquette >= 3}" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.etiquette, 4)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_empty"
+                hearts="@{data.etiquette >= 4}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/grace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="@dimen/subtitle_top_margin"
+            android:gravity="center_vertical"
+            android:layout_below="@id/etiquette"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/subtitle_size"
+                android:fontFamily="@font/sydonia"
+                app:fontFamily="@font/sydonia"
+                android:text="GRACE"/>
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.grace, 1)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_full"
+                hearts="@{data.grace >= 1}" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.grace, 2)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_empty"
+                hearts="@{data.grace >= 2}" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.grace, 3)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_empty"
+                hearts="@{data.grace >= 3}" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.grace, 4)}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/heart_empty"
+                hearts="@{data.grace >= 4}" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

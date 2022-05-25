@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="data"
+            type="me.berfini.household.data.CharacterViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="@dimen/underline_top_margin"
+            android:layout_marginEnd="90dp"
+            android:scaleX="1"
+            android:src="@drawable/underline" />
+
+        <LinearLayout
+            android:id="@+id/society"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/distressed"
+                android:text="A"
+                android:textColor="@color/black"
+                android:textSize="@dimen/capital_size"
+                android:textStyle="bold"
+                app:fontFamily="@font/distressed" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sydonia"
+                android:text="CADEMIA"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title_size"
+                app:fontFamily="@font/sydonia" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.academia, 1)}"
+                diamonds="@{data.academia >= 1}"
+                android:layout_width="@dimen/ace_big_size"
+                android:layout_height="@dimen/ace_big_size"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/diamond_full" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.academia, 2)}"
+                diamonds="@{data.academia >= 2}"
+                android:layout_width="@dimen/ace_big_size"
+                android:layout_height="@dimen/ace_big_size"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/diamond_empty" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/background_ace_width"
+            android:layout_height="@dimen/background_ace_height"
+            android:layout_below="@id/society"
+            android:alpha="0.1"
+            android:src="@drawable/diamonds" />
+
+        <LinearLayout
+            android:id="@+id/art"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/society"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sydonia"
+                android:text="CARE"
+                android:textColor="@color/black"
+                android:textSize="@dimen/subtitle_size"
+                app:fontFamily="@font/sydonia" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.care, 1)}"
+                diamonds="@{data.care >= 1}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_full" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.care, 2)}"
+                diamonds="@{data.care >= 2}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_empty" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.care, 3)}"
+                diamonds="@{data.care >= 3}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_empty" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.care, 4)}"
+                diamonds="@{data.care >= 4}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_empty" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/charme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="@dimen/subtitle_top_margin"
+            android:gravity="center_vertical"
+            android:layout_below="@id/art"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/subtitle_size"
+                android:fontFamily="@font/sydonia"
+                app:fontFamily="@font/sydonia"
+                android:text="CRAFT"/>
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.craft, 1)}"
+                diamonds="@{data.craft >= 1}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_full" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.craft, 2)}"
+                diamonds="@{data.craft >= 2}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_empty" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.craft, 3)}"
+                diamonds="@{data.craft >= 3}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_empty" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.craft, 4)}"
+                diamonds="@{data.craft >= 4}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_empty" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/eloquence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="@dimen/subtitle_top_margin"
+            android:gravity="center_vertical"
+            android:layout_below="@id/charme"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/subtitle_size"
+                android:fontFamily="@font/sydonia"
+                app:fontFamily="@font/sydonia"
+                android:text="CULTURE"/>
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.culture, 1)}"
+                diamonds="@{data.culture >= 1}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_full" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.culture, 2)}"
+                diamonds="@{data.culture >= 2}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_empty" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.culture, 3)}"
+                diamonds="@{data.culture >= 3}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_empty" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.culture, 4)}"
+                diamonds="@{data.culture >= 4}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_empty" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/etiquette"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="@dimen/subtitle_top_margin"
+            android:gravity="center_vertical"
+            android:layout_below="@id/eloquence"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/subtitle_size"
+                android:fontFamily="@font/sydonia"
+                app:fontFamily="@font/sydonia"
+                android:text="INSIGHT"/>
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.insight, 1)}"
+                diamonds="@{data.insight >= 1}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_full" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.insight, 2)}"
+                diamonds="@{data.insight >= 2}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_empty" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.insight, 3)}"
+                diamonds="@{data.insight >= 3}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_empty" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.insight, 4)}"
+                diamonds="@{data.insight >= 4}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_empty" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/grace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etiquette"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/subtitle_top_margin"
+            android:layout_marginEnd="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sydonia"
+                android:text="INVESTIGATION"
+                android:textColor="@color/black"
+                android:textSize="@dimen/subtitle_size"
+                app:fontFamily="@font/sydonia" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.investigation, 1)}"
+                diamonds="@{data.investigation >= 1}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_full" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.investigation, 2)}"
+                diamonds="@{data.investigation >= 2}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_empty" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.investigation, 3)}"
+                diamonds="@{data.investigation >= 3}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_empty" />
+
+            <ImageView
+                android:onClick="@{() -> data.toggle(data.investigation, 4)}"
+                diamonds="@{data.investigation >= 4}"
+                android:layout_width="@dimen/ace_small_size"
+                android:layout_height="@dimen/ace_small_size"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/diamond_empty" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

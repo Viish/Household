@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="me.berfini.household.data.CharacterViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/society"
+                layout="@layout/society"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/title_top_margin"
+                app:data="@{viewModel}" />
+
+            <include layout="@layout/academia"
+                android:id="@+id/academia"
+                android:layout_marginTop="@dimen/title_top_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/society"
+                app:data="@{viewModel}"/>
+
+            <include
+                android:id="@+id/war"
+                layout="@layout/war"
+                android:layout_marginTop="@dimen/title_top_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/academia"
+                app:data="@{viewModel}" />
+
+            <include
+                android:id="@+id/street"
+                layout="@layout/street"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/war"
+                android:layout_marginTop="@dimen/title_top_margin"
+                app:data="@{viewModel}" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</layout>

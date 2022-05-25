@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ace_big_size">25dp</dimen>
+    <dimen name="ace_small_size">20dp</dimen>
+    <dimen name="background_ace_width">180dp</dimen>
+    <dimen name="background_ace_height">130dp</dimen>
+    <dimen name="underline_top_margin">20dp</dimen>
+    <dimen name="title_top_margin">20dp</dimen>
+    <dimen name="subtitle_top_margin">7dp</dimen>
+    <dimen name="capital_size">40sp</dimen>
+    <dimen name="title_size">25sp</dimen>
+    <dimen name="subtitle_size">18sp</dimen>
+</resources>
